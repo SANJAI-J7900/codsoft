@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANJAI J's Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #ff85a1;
+            --secondary-color: #f8b400;
+            --background-color: #fdf3f7;
+            --text-color: #333;
+            --accent-color: #5eb7e5;
+            --border-radius: 15px;
+            --hover-color: #ffe1e9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://via.placeholder.com/1920x1080'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            animation: slide-down 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--hover-color);
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background: var(--hover-color);
+            width: 0;
+            transition: width 0.3s;
+            margin: auto;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        @keyframes slide-down {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        section h2 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fade-in 1s ease;
+        }
+
+        #skills ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #skills ul li {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            margin: 10px 0;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #skills ul li:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: white;
+            border: 2px solid var(--accent-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .project-img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+
+        .parallax {
+            background-image: url('https://via.placeholder.com/1920x1080'); /* Replace with your image */
+            min-height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--hover-color);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SANJAI J</h1>
+        <p>B.Tech IT Student</p>
+        <nav>
+            <a href="#profile">Profile</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="profile">
+            <h2>Profile</h2>
+            <p>I am a passionate Web Developer with a strong foundation in modern web technologies. My expertise lies in creating dynamic, user-friendly websites and applications that offer seamless user experiences. I am skilled in front-end and back-end development, and I am always eager to learn and adapt to new challenges in the ever-evolving field of web development.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Communication</li>
+                <li>Time Management</li>
+                <li>Critical Thinking</li>
+                <li>Meeting Deadlines</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Java</li>
+                <li>C</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Web Development</li>
+            </ul>
+        </section>
+
+        <div class="parallax"></div>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/500x300?text=Cookbook" alt="Cookbook Image" class="project-img">
+                    <h3>Cookbook Project</h3>
+                    <p>A project dedicated to showcasing a collection of recipes with interactive features, including search and filtering options.</p>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/500x300?text=Project+Generator" alt="Project Generator Image" class="project-img">
+                    <h3>Project Generator</h3>
+                    <p>An automated tool designed to help users generate and manage project ideas efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you would like to get in touch, feel free to contact me via email or connect with me on LinkedIn:</p>
+            <p>
+                <a href="mailto:sanjaijayakumar306@gmail.com" class="contact-link">Email: sanjaijayakumar306@gmail.com</a><br>
+                <a href="https://www.linkedin.com/in/sanjai-j-9026932a1/" class="contact-link" target="_blank">LinkedIn</a>
+            </p>
+        </section>
+
+        <footer>
+            <p>© 2024 SANJAI J | <a href="mailto:sanjaijayakumar306@gmail.com" class="contact-link">Contact Me</a></p>
+        </footer>
+    </div>
+</body>
+</html>
